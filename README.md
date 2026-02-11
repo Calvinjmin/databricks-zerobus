@@ -2,6 +2,10 @@
 
 A high-performance real-time financial transactions dashboard that showcases the [ZeroBus Ingest SDK](https://github.com/databricks/zerobus-sdk-py) capabilities. The demo simulates transaction data, ingests it into Databricks Delta tables using async batch processing with parallel workers, and provides comprehensive performance visualizations.
 
+![Live Dashboard](static/live_dashboard.png)
+
+![Databricks History](static/databricks_history.png)
+
 ## Key Features
 
 ### High-Performance Ingestion
@@ -74,6 +78,8 @@ This installs dependencies, starts the backend on `:8000` and the frontend on `:
 
 `Ctrl+C` stops both servers.
 
+> **See it in action:** Check out the screenshots above to see the live dashboard and historical data views!
+
 ## Manual setup
 
 **Backend:**
@@ -127,6 +133,8 @@ The dashboard has two tabs:
 
 ### Live Dashboard Tab
 
+![Live Dashboard](static/live_dashboard.png)
+
 **Summary Metrics:**
 - Total transactions, volume, average amount, anomalies, and real-time tx/sec
 
@@ -146,6 +154,8 @@ The dashboard has two tabs:
 - WebSocket connection status indicator
 
 ### Databricks History Tab
+
+![Databricks History](static/databricks_history.png)
 
 - **Summary statistics** — Aggregated metrics from the Delta table: total rows, volume, average amount, anomaly count/percentage, and time range
 - **Breakdown charts** — Visualizations showing transaction distribution by type, status, and currency
@@ -241,6 +251,22 @@ The demo implements several optimizations to showcase ZeroBus SDK performance:
 3. **Exponential moving average** — Smooth rate calculations for better visualization
 4. **Bounded data structures** — Limited buffer sizes prevent memory issues at high throughput
 5. **Efficient chart rendering** — Charts use backend stats instead of processing all transactions
+
+## Screenshots
+
+### Live Dashboard
+The live dashboard provides real-time performance monitoring with comprehensive visualizations:
+
+- **Performance Metrics**: Track throughput, latency, and efficiency in real-time
+- **Multiple Charts**: Throughput, volume, generation vs ingestion comparison, and latency percentiles
+- **ZeroBus SDK Metrics**: Detailed ingestion performance including success rates and queue utilization
+
+### Databricks History
+Query and visualize historical data stored in Databricks:
+
+- **Aggregated Statistics**: Summary metrics from the Delta table
+- **Breakdown Charts**: Distribution by type, status, and currency
+- **Transaction Table**: Paginated view with full transaction details
 
 ## License
 
